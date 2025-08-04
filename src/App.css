@@ -1,0 +1,223 @@
+/* Overall app styling */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: radial-gradient(rgb(251, 250, 225) 0%, rgb(100, 163, 111) 100%);
+  color: #1e293b;
+}
+
+/* Search form container */
+.search-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 500px;
+  width: 100%;
+  background-color: #f8fafc;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Input container for suggestions */
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Input styling */
+.input {
+  width: 90%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  background-color: #e0f2fe;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+}
+
+/* Search button styling */
+.search-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #1e40af;
+}
+
+/* Autocomplete dropdown */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #f9fafb;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 20;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Suggestion item */
+.suggestion-item {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #e0f2fe;
+  color: #1d4ed8;
+}
+
+/* Highlighted text in suggestions */
+.highlight {
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+/* Weather display card */
+.weather-info {
+  background: radial-gradient(circle at 10% 20%, rgb(116, 203, 199) 0%, rgb(220, 246, 200) 80%);
+  border-radius: 20px;
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 1px 1px 5px #4a4a4a;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Weather info typography */
+.weather-info h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.weather-info h3 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin: 0.5rem 0;
+}
+
+.weather-info p {
+  font-size: 1rem;
+  color: #475569;
+  margin: 0.25rem 0;
+}
+
+/* Weather icon container */
+.weather-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.weather-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.weather-icon p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Loading and error messages */
+.loading {
+  font-size: 1rem;
+  color: #475569;
+  margin-top: 1rem;
+}
+
+.error {
+  font-size: 1rem;
+  color: #dc2626;
+  margin-top: 1rem;
+}
+
+/* Custom scrollbar for suggestions */
+.suggestions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions::-webkit-scrollbar-track {
+  background: #f1f3f5;
+  border-radius: 8px;
+}
+
+.suggestions::-webkit-scrollbar-thumb {
+  background: #bfdbfe;
+  border-radius: 8px;
+}
+
+/* Dropdown animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .weather-info {
+    padding: 1.2rem;
+    margin: 1rem auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 95vw;
+  }
+
+  .weather-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .weather-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .weather-info p {
+    font-size: 0.95rem;
+  }
+
+  .weather-icon img {
+    width: 60px;
+    height: 60px;
+  }
+}
